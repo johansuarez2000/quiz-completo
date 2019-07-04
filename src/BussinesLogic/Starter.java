@@ -109,14 +109,35 @@ public static void main (String [] args) throws FileNotFoundException,IOExceptio
       Scanner entrada1= new Scanner(System.in);
       tipo= entrada1.nextLine();
       if(tipo.equals("a")){
+          System.out.println("los perros registrados son\n");
           for (int i = 0; i < mascotas.size(); i++) {
-              if(mascotas.get(i).getClass().equals(mascotas.get(0).getClass())){
-                  System.out.println("los perros registrados son\n" + mascotas.get(i).getName()+mascotas.get(i).getId()+mascotas.get(i).getHairColor()+ mascotas.get(i));
+              if(mascotas.get(i).getClass().getCanonicalName().equals("starter.Dog")){
+                  System.out.println(mascotas.get(i).getName()+" "+mascotas.get(i).getId()+" "+mascotas.get(i).getHairColor()+" "+ mascotas.get(i).toString());
+          }  
+          }
+      }else if(tipo.equals("b")){
+          System.out.println("los gatos registrados son\n");
+          for (int i = 0; i < mascotas.size(); i++) {
+              if(mascotas.get(i).getClass().getCanonicalName().equals("starter.Cat")){
+                  System.out.println(mascotas.get(i).getName()+" "+mascotas.get(i).getId()+" "+mascotas.get(i).getHairColor()+" "+ mascotas.get(i).toString());
+          }  
+          }
+      }else if(tipo.equals("c")){
+          System.out.println("los Hamster registrados son\n");
+          for (int i = 0; i < mascotas.size(); i++) {
+              if(mascotas.get(i).getClass().getCanonicalName().equals("strater.Hamster")){
+                  System.out.println(mascotas.get(i).getName()+" "+mascotas.get(i).getId()+" "+mascotas.get(i).getHairColor()+" "+ mascotas.get(i).toString());
           }  
           }
       }
     
-    } 
+    } else if(accion.equals("b")){
+        for (int i = 0; i < mascotas.size(); i++) {
+              
+                  System.out.println(mascotas.get(i).getClass().getCanonicalName()+ " "+mascotas.get(i).getName()+" "+mascotas.get(i).getId()+" "+mascotas.get(i).getHairColor()+" "+ mascotas.get(i).toString());
+            
+          }
+    }
 
 }
 }
