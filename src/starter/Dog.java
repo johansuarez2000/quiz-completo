@@ -12,11 +12,10 @@ package starter;
 public class Dog extends Pet {
     private String raza;
 
-    public Dog(String raza, String id, String name, String hairColor, Person dueño) {
-        super(id, name, hairColor, dueño);
+    public Dog(String raza, String id, String name, String hairColor) {
+        super(id, name, hairColor);
         this.raza = raza;
     }
-    
   
 
     public String getRaza() {
@@ -30,6 +29,11 @@ public class Dog extends Pet {
     @Override
     public String Sound() {
         return ("guau");
+    }
+
+    @Override
+    public String toString() {
+        return "Dog{" + "raza=" + raza + '}';
     }
     
     

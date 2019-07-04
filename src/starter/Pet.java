@@ -15,11 +15,10 @@ public abstract class Pet {
     private String hairColor;
     private Person dueño;
 
-    public Pet(String id, String name, String hairColor, Person dueño) {
+    public Pet(String id, String name, String hairColor) {
         this.id = id;
         this.name = name;
-        this.hairColor = hairColor;
-        this.dueño = dueño;
+        this.hairColor = hairColor;       
     }
 
     public String getId() {
@@ -54,6 +53,11 @@ public abstract class Pet {
         this.hairColor = hairColor;
     }
     public abstract String Sound();
+
+    @Override
+    public String toString() {
+        return "Pet{" + "id=" + id + ", name=" + name + ", hairColor=" + hairColor + ", due\u00f1o=" + dueño + '}';
+    }
         
     }
 

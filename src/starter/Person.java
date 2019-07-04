@@ -36,5 +36,10 @@ public class Person {
     public void setId(String id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" + "nombre=" + nombre + ", id=" + id + '}';
+    }
    
 }

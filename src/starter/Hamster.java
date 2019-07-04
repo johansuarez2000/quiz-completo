@@ -12,8 +12,8 @@ package starter;
 public class Hamster extends Pet {
     private double peso;
 
-    public Hamster(double peso, String id, String name, String hairColor, Person dueño) {
-        super(id, name, hairColor, dueño);
+    public Hamster(double peso, String id, String name, String hairColor) {
+        super(id, name, hairColor);
         this.peso = peso;
     }
 
@@ -29,6 +29,11 @@ public class Hamster extends Pet {
 
     public void setPeso(double peso) {
         this.peso = peso;
+    }
+
+    @Override
+    public String toString() {
+        return "Hamster{" + "peso=" + peso + '}';
     }
     
 }

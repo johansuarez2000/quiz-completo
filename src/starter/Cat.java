@@ -12,8 +12,8 @@ package starter;
 public class Cat extends Pet{
     private boolean isHunter;
 
-    public Cat(boolean isHunter, String id, String name, String hairColor, Person dueño) {
-        super(id, name, hairColor, dueño);
+    public Cat(boolean isHunter, String id, String name, String hairColor) {
+        super(id, name, hairColor);
         this.isHunter = isHunter;
     }
 
@@ -30,6 +30,11 @@ public class Cat extends Pet{
     @Override
     public String Sound() {
          return ("miau");
+    }
+
+    @Override
+    public String toString() {
+        return "Cat{" + "isHunter=" + isHunter + '}';
     }
     
     
