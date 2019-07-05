@@ -31,11 +31,7 @@ public class Cat extends Pet{
     public String Sound() {
          return ("miau");
     }
-
-    @Override
-    public String toString() {
-        return "Cat{" + "isHunter=" + isHunter + '}';
-    }
+    
     
     
 }

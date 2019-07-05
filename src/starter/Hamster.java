@@ -31,9 +31,6 @@ public class Hamster extends Pet {
         this.peso = peso;
     }
 
-    @Override
-    public String toString() {
-        return "Hamster{" + "peso=" + peso + '}';
-    }
+   
     
 }

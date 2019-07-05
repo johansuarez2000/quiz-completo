@@ -30,11 +30,5 @@ public class Dog extends Pet {
     public String Sound() {
         return ("guau");
     }
-
-    @Override
-    public String toString() {
-        return raza;
-    }
-    
-    
+   
 }
