@@ -27,20 +27,32 @@ public class Starter {
 public static void main (String [] args) throws FileNotFoundException,IOException{
         
         
-        String nameD=null;
-        String nameP=null;
+        
         int numid=0;
-        String nombreP;
         File lectura=new File("pets.txt");
         Scanner flujoEntrada=null;
-        ArrayList<Person> dueños= new ArrayList<>();
+       /* ArrayList<Person> dueños= new ArrayList<>();
         ArrayList<Pet> mascotas= new ArrayList<>();
-        Veterinaria casita=new Veterinaria("El amigo Fiel", mascotas);
-        int e=0;
-        
+        Veterinaria casita=new Veterinaria("El amigo Fiel", mascotas);  */      
         String linea=null;
         flujoEntrada=new Scanner(lectura);
- 
+        int y=2;
+        for (int i = 0; i < y; i++) {
+            linea=flujoEntrada.nextLine();
+            
+            
+                String[] parts = linea.split(" ");
+                for (int j = 0; j < parts.length; j++) {
+                    if(parts[0].equals("Dog")){
+                        System.out.println(parts[j]);
+                    }
+            }
+                if(flujoEntrada.hasNextLine()){
+                    y=y+2;
+                }
+        }
+
+ /*
          while (flujoEntrada.hasNextLine())
         {
             linea=flujoEntrada.nextLine();
@@ -125,7 +137,7 @@ public static void main (String [] args) throws FileNotFoundException,IOExceptio
       }else if(tipo.equals("c")){
           System.out.println("los Hamster registrados son\n");
           for (int i = 0; i < mascotas.size(); i++) {
-              if(mascotas.get(i).getClass().getCanonicalName().equals("strater.Hamster")){
+              if(mascotas.get(i).getClass().getCanonicalName().equals("starter.Hamster")){
                   System.out.println(mascotas.get(i).getName()+" "+mascotas.get(i).getId()+" "+mascotas.get(i).getHairColor()+" "+ mascotas.get(i).toString());
           }  
           }
@@ -138,10 +150,10 @@ public static void main (String [] args) throws FileNotFoundException,IOExceptio
             
           }
     }
-
+*/
 }
 }
 
-        
+      
         
 
