@@ -53,11 +53,8 @@ public abstract class Pet {
         this.hairColor = hairColor;
     }
     public abstract String Sound();
-
-    @Override
-    public String toString() {
-        return "Pet{" + "id=" + id + ", name=" + name + ", hairColor=" + hairColor + ", due\u00f1o=" + dueño + '}';
-    }
+    public abstract String toString();  
+    public abstract String guardarMemoria();
         
     }
 

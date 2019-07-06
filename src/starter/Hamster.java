@@ -31,6 +31,14 @@ public class Hamster extends Pet {
         this.peso = peso;
     }
 
-   
+   @Override
+    public String toString() {
+        return "Pet{" + "id=" + getId() + ", name=" + getName() + ", peso=" + getPeso() +", hairColor=" + getHairColor() + ", due\u00f1o=" + getDueño()+  '}';
+    }
+
+    @Override
+    public String guardarMemoria() {
+        return "Hamster " + getId() + " " + getName()+ " "+ getHairColor()+" "+ getPeso()+"\n" + getDueño().getNombre() + " "+getDueño().getId()+"\n";
+    }
     
 }

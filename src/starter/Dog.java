@@ -30,5 +30,13 @@ public class Dog extends Pet {
     public String Sound() {
         return ("guau");
     }
-   
+   @Override
+    public String toString() {
+        return "Pet{" + "id=" + getId() + ", name=" + getName() + ", raza=" + getRaza() +", hairColor=" + getHairColor() + ", due\u00f1o=" + getDueño()+  '}';
+    }
+
+    @Override
+    public String guardarMemoria() {
+        return "Dog " + getId() + " " + getName()+ " "+ getHairColor()+" "+ getRaza()+"\n" + getDueño().getNombre() + " "+getDueño().getId()+"\n";
+    }
 }

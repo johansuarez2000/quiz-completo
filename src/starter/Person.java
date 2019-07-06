@@ -5,6 +5,8 @@
  */
 package starter;
 
+import java.util.ArrayList;
+
 
 
 /**
@@ -14,6 +16,7 @@ package starter;
 public class Person {
     private String nombre;
     private String id;
+    private ArrayList<Pet> mascotas= new ArrayList<>();
     
 
     public Person(String nombre, String id) {
@@ -36,6 +39,16 @@ public class Person {
     public void setId(String id) {
         this.id = id;
     }
+
+    public ArrayList<Pet> getMascotas() {
+        return mascotas;
+    }
+
+    public void setMascotas(ArrayList<Pet> mascotas) {
+        this.mascotas = mascotas;
+    }
+
+    
 
     @Override
     public String toString() {
