@@ -4,7 +4,7 @@ Cat cat1 daniela negro true
 Maria 39735679
 Cat hamster1 carlos cafe false
 Andres 1203323591
-Dog dog2 zlatam negro Bernese
+Dog dog1 zlatam negro Bernese
 Fabian 123456
-Cat cat2 checha blanco false
+Cat cat1 checha blanco false
 Maria 39735679

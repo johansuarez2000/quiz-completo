@@ -40,6 +40,7 @@ public static void main (String [] args) throws FileNotFoundException,IOExceptio
         while(flujoEntrada.hasNextLine()) {
             linea=flujoEntrada.nextLine();            
                 String[] parts = linea.split(" ");
+        
              if(parts[0].equals("Dog")){
                  mascotas.add(new Dog(parts[4], parts[1], parts[2], parts[3]));
              } else if(parts[0].equals("Cat")){
@@ -69,14 +70,32 @@ public static void main (String [] args) throws FileNotFoundException,IOExceptio
                 }
             }
     }
+    for (int j = 0; j < 4; j++) {
+        try{
+            for (int k = 0; k < mascotas.size(); k++) {
+                for (int l = 0; l < mascotas.size(); l++) {
+                    if(k!=l&&mascotas.get(k).getId().equals(mascotas.get(l).getId())){
+                        String idmascota= mascotas.get(l).getName();
+                        mascotas.remove(l);
+                        throw new IllegalArgumentException(idmascota);
+                                }
+                }
+            }
+       }catch(IllegalArgumentException e){
+            System.out.println("no se puede registrar la mascota: "+ e.getLocalizedMessage()+" ya que ya hay una mascota con el mismo id" );
+        }
+    }
+     
       
-         
+       
     System.out.println("Bienvenidos a la veterinaria " + v1.getNombre() );  
-    System.out.println("Que desea hacer \nA:remover una mascota\nB:listar las mascotas dado su tipo\nC:Finalizar el programa ");    
+    System.out.println("Que desea hacer \nEscriba a para: remover una mascota\nEscriba b para:listar las mascotas dado su tipo\nCualquier tecla para:Finalizar el programa ");    
     String tipo;
     Scanner entrada1= new Scanner(System.in);
     tipo= entrada1.nextLine();   
     int x= 0;
+    Boolean idValido= true;
+    int Nmascotas= mascotas.size();
     while(x==0){
     tipo=tipo.toUpperCase();
     if(tipo.equals("A")){
@@ -85,23 +104,31 @@ public static void main (String [] args) throws FileNotFoundException,IOExceptio
         String id;
         Scanner entrada2= new Scanner(System.in);
         id= entrada2.nextLine();
-       
+        
+       try{
         for (int j = 0; j < mascotas.size(); j++) {
             if(mascotas.get(j).getId().equals(id)){
                 mascotas.remove(j);                
             }
-        } 
+            }
+       if(Nmascotas==mascotas.size()){
+           
+           throw new IllegalArgumentException(id);
+       } 
+       }catch(IllegalArgumentException e){
+           System.out.println("id de mascota a borrar no encontrado");
+       }
          try{
             PrintWriter salida= new PrintWriter("pets.txt");            
              for (int j = 0; j < mascotas.size(); j++) {
                  salida.print(mascotas.get(j).guardarMemoria());
              }
-            salida.close();
+            salida.close();           
         }catch(FileNotFoundException e){
             
         }                
         System.out.println("¿Que desea hacer ahora?");
-        System.out.println("Que desea hacer \nA:remover una mascota\nB:listar las mascotas dado su tipo\nC:Finalizar el programa ");
+        System.out.println("Que desea hacer Que desea hacer \nEscriba a para: remover una mascota\nEscriba b para:listar las mascotas dado su tipo\nCualquier tecla para:Finalizar el programa ");
         String accion;
         Scanner action= new Scanner(System.in);
         accion= action.nextLine();
@@ -132,7 +159,7 @@ public static void main (String [] args) throws FileNotFoundException,IOExceptio
             }
     }
         System.out.println("¿Que desea hacer ahora?");
-        System.out.println("Que desea hacer \nA:remover una mascota\nB:listar las mascotas dado su tipo\nC:Finalizar el programa ");
+        System.out.println("Que desea hacer Que desea hacer \nEscriba a para: remover una mascota\nEscriba b para:listar las mascotas dado su tipo\nCualquier tecla para:Finalizar el programa");
         String accion;
         Scanner action= new Scanner(System.in);
         accion= action.nextLine();
@@ -141,6 +168,7 @@ public static void main (String [] args) throws FileNotFoundException,IOExceptio
         x++;
     }
     }
+   
     for (int j = 0; j < mascotas.size(); j++) {
           for (int k = 0; k < dueños.size(); k++) {
               if(mascotas.get(j).getDueño().getId().equals(dueños.get(k).getId())){
